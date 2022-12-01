@@ -32,10 +32,22 @@ class GymsViewController: UIViewController {
     
     @IBOutlet weak var gymsTableView: UITableView!
     
+    @IBOutlet weak var countGymsLabel: UILabel!
+    
+    @IBAction func addGymButton(_ sender: UIButton) {
+        print("Create Gym")
+        guard let addGymViewController = storyboard?.instantiateViewController(withIdentifier: "AddGymViewController") as? AddGymViewController else {
+            return
+        }
+        addGymViewController.delegate = self
+        present(addGymViewController, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gymsTableView.dataSource = self
         gymsTableView.delegate = self
+        countGymsLabel.text = String(gymsArray.count)
         // Do any additional setup after loading the view.
     }
 
@@ -50,6 +62,8 @@ extension GymsViewController : UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GymTableViewCell", for: indexPath) as? GymTableViewCell else {
             return UITableViewCell()
         }
+        cell.delegate = self
+        cell.indexCell = indexPath.row
         let name = gymsArray[indexPath.row].name
         let district = gymsArray[indexPath.row].district
         cell.setupLabels(name: name, district: district)
@@ -68,3 +82,18 @@ extension GymsViewController : UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension GymsViewController : GymTableViewCellDelegate {
+    func removeGym(cell: GymTableViewCell, index: Int) {
+        gymsArray.remove(at: index)
+        gymsTableView.reloadData()
+        countGymsLabel.text = String(gymsArray.count)
+    }
+}
+
+extension GymsViewController : AddGymViewControllerDelegate {
+    func addGym(gym: Gym) {
+        gymsArray.append(gym)
+        countGymsLabel.text = String(gymsArray.count)
+        gymsTableView.reloadData()
+    }
+}

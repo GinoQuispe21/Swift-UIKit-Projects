@@ -7,11 +7,24 @@
 
 import UIKit
 
+protocol GymTableViewCellDelegate : AnyObject{
+    func removeGym(cell: GymTableViewCell, index: Int)
+}
+
 class GymTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameGymLabel: UILabel!
     
     @IBOutlet weak var districtGymLabel: UILabel!
+    
+    weak var delegate : GymTableViewCellDelegate?
+    var indexCell : Int = 0
+    
+    @IBAction func deleteGym(_ sender: UIButton) {
+        print("Delete gym")
+        delegate?.removeGym(cell: self, index: indexCell)
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
