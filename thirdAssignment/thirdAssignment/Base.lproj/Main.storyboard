@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="319.84732824427482" y="36.619718309859159"/>
         </scene>
-        <!--Task Info View Controller-->
+        <!--Mi Rutina-->
         <scene sceneID="cm0-mB-nly">
             <objects>
                 <viewController storyboardIdentifier="taskInfoViewController" id="bur-Ot-RWh" customClass="TaskInfoViewController" customModule="thirdAssignment" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,13 +81,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-vw-MOV">
-                                <rect key="frame" x="20" y="79" width="353" height="21"/>
+                                <rect key="frame" x="20" y="123" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFT-W7-U5g">
-                                <rect key="frame" x="20" y="120" width="353" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFT-W7-U5g">
+                                <rect key="frame" x="20" y="164" width="353" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="vkn-r5-8Lc"/>
                                 </constraints>
@@ -96,14 +96,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKC-1p-sDY">
-                                <rect key="frame" x="20" y="228" width="157" height="21"/>
+                                <rect key="frame" x="20" y="296" width="157" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5e-pN-cUQ">
-                                <rect key="frame" x="216" y="228" width="157" height="21"/>
+                                <rect key="frame" x="220" y="296" width="157" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -121,6 +121,18 @@
                             <constraint firstItem="Kdu-vw-MOV" firstAttribute="top" secondItem="ewA-dz-otQ" secondAttribute="top" constant="20" id="pMS-tf-uDd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Mi Rutina" id="gWZ-gX-CKG">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="ttv-mZ-jPE">
+                            <connections>
+                                <action selector="closeInfoTaskBarButtonItemm:" destination="bur-Ot-RWh" id="arf-5L-MC4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="GYG-hq-Ojj">
+                            <connections>
+                                <action selector="deleteBarButtonItem:" destination="bur-Ot-RWh" id="pmv-Zm-ZF0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateTaskLabel" destination="L5e-pN-cUQ" id="Rgq-fW-PpO"/>
                         <outlet property="descTaskLabel" destination="UFT-W7-U5g" id="qFf-50-vY2"/>
@@ -130,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzo-8U-9Fv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="61"/>
+            <point key="canvasLocation" x="2944.2748091603053" y="84.507042253521135"/>
         </scene>
         <!--Agregar Tarea-->
         <scene sceneID="aYf-J4-WLT">
@@ -196,13 +208,13 @@
                                                     <rect key="frame" x="219" y="5" width="154" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="date-time"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-JJ-haP">
                                                     <rect key="frame" x="20" y="5" width="155" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -269,6 +281,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zd7-WY-rZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-584" y="37"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="061-Kx-lK7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QSW-II-es9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MSu-Hn-ERp">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bur-Ot-RWh" kind="relationship" relationship="rootViewController" id="TSO-2M-EBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juT-EY-gPp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2017.5572519083969" y="84.507042253521135"/>
         </scene>
     </scenes>
     <resources>

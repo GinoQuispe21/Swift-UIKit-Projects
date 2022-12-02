@@ -9,7 +9,9 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    var taskArray : [Task] = []
+    var taskArray : [Task] = [
+        Task(name: "Tarea de Ingles", desc: "Avanzar con el proyecto final, sobre una cultura peruana antiguar. Especificar localidad, historia y en que destacaban.", priority: "Media", date: "21/04/2023")
+    ]
     
     @IBOutlet var taskTableView: UITableView!
     @IBAction func AddTaskBarButtonItem(_ sender: UIBarButtonItem) {
@@ -31,7 +33,6 @@ class HomeTableViewController: UITableViewController {
         }
         let name = taskArray[indexPath.row].name
         let desc = taskArray[indexPath.row].desc
-        
         cell.setupLabels(name: name, desc: desc)
         return cell
     }
@@ -43,7 +44,12 @@ class HomeTableViewController: UITableViewController {
         taskInfoViewController.desc = task.desc
         taskInfoViewController.prio = task.priority
         taskInfoViewController.date = task.date
-        present(taskInfoViewController, animated: true)
+        
+        let nav = UINavigationController(rootViewController: taskInfoViewController)
+        let destination = nav.viewControllers.first as? TaskInfoViewController
+        destination?.indexCell = indexPath.row
+        destination?.delegate = self
+        present(nav, animated: true)
     }
 
 }
@@ -68,5 +74,12 @@ extension HomeTableViewController: AddTaskTableViewControllerDelegate{
         taskArray.append(newTask)
         taskTableView.reloadData()
         
+    }
+}
+
+extension HomeTableViewController: TaskInfoViewControllerDelegate {
+    func taskInfoViewController(_ viewController: UIViewController, didRemoveTask index: Int) {
+        taskArray.remove(at: index)
+        taskTableView.reloadData()
     }
 }
