@@ -69,14 +69,30 @@
 				7E77D9C0293A60C700E9C394 /* Main.storyboard */,
 				7E77D9D6293A723300E9C394 /* TaskInfoViewController.swift */,
 				7E77D9D4293A6D2100E9C394 /* TaskTableViewCell.swift */,
-				7E77D9D2293A663300E9C394 /* TaskStruct.swift */,
 				7E77D9D0293A631A00E9C394 /* AddTaskTableViewController.swift */,
 				7E77D9CE293A62AF00E9C394 /* HomeTableViewController.swift */,
+				7E77D9D9293AE63600E9C394 /* Extensions */,
+				7E77D9D8293ABFA800E9C394 /* Models */,
 				7E77D9C3293A60CA00E9C394 /* Assets.xcassets */,
 				7E77D9C5293A60CA00E9C394 /* LaunchScreen.storyboard */,
 				7E77D9C8293A60CA00E9C394 /* Info.plist */,
 			);
 			path = thirdAssignment;
+			sourceTree = "<group>";
+		};
+		7E77D9D8293ABFA800E9C394 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E77D9D2293A663300E9C394 /* TaskStruct.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7E77D9D9293AE63600E9C394 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
