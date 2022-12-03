@@ -10,7 +10,8 @@ import UIKit
 class HomeTableViewController: UITableViewController {
 
     var taskArray : [Task] = [
-        Task(name: "Tarea de Ingles", desc: "Avanzar con el proyecto final, sobre una cultura peruana antiguar. Especificar localidad, historia y en que destacaban.", priority: "Media", date: "21/04/2023")
+        Task(name: "Tarea de Ingles", desc: "Avanzar con el proyecto final, sobre una cultura peruana antiguar. Especificar localidad, historia y en que destacaban.", priority: "Media", date: "21/04/2023"),
+        Task(name: "Reto 3 Bootcamp", desc: "Avanzar con el proyecto final, sobre una cultura peruana antiguar. Especificar localidad, historia y en que destacaban.", priority: "Alta", date: "03/12/2022"),
     ]
     
     @IBOutlet var taskTableView: UITableView!
@@ -51,55 +52,5 @@ class HomeTableViewController: UITableViewController {
         destination?.delegate = self
         present(nav, animated: true)
     }
-
 }
 
-extension HomeTableViewController {
-    func setEmptyMessage(_ message: String) {
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-            messageLabel.text = message
-            messageLabel.textColor = black
-            messageLabel.numberOfLines = 0
-            messageLabel.textAlignment = .center
-            messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
-            messageLabel.sizeToFit()
-
-            self.backgroundView = messageLabel
-            self.separatorStyle = .none
-        }
-
-        func restore() {
-            self.backgroundView = nil
-            self.separatorStyle = .singleLine
-        }
-}
-
-extension HomeTableViewController {
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nav = segue.destination as? UINavigationController
-        let destination = nav?.viewControllers.first as? AddTaskTableViewController
-        destination?.delegate = self
-    }
-    
-    
-}
-
-extension HomeTableViewController: AddTaskTableViewControllerDelegate{
-    func addTaskTableViewController(_ tableViewController: UITableViewController, didCreateTask newTask: Task) {
-        taskArray.append(newTask)
-        taskTableView.reloadData()
-        
-    }
-}
-
-extension HomeTableViewController: TaskInfoViewControllerDelegate {
-    func taskInfoViewController(_ viewController: UIViewController, didRemoveTask index: Int) {
-        taskArray.remove(at: index)
-        taskTableView.reloadData()
-    }
-}

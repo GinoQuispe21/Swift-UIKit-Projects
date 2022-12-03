@@ -17,6 +17,7 @@
 		7E77D9D3293A663300E9C394 /* TaskStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E77D9D2293A663300E9C394 /* TaskStruct.swift */; };
 		7E77D9D5293A6D2100E9C394 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E77D9D4293A6D2100E9C394 /* TaskTableViewCell.swift */; };
 		7E77D9D7293A723300E9C394 /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E77D9D6293A723300E9C394 /* TaskInfoViewController.swift */; };
+		7EA8106D293BC7DF0044BC2E /* ExtensionsHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8106C293BC7DF0044BC2E /* ExtensionsHomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7E77D9D2293A663300E9C394 /* TaskStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStruct.swift; sourceTree = "<group>"; };
 		7E77D9D4293A6D2100E9C394 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		7E77D9D6293A723300E9C394 /* TaskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
+		7EA8106C293BC7DF0044BC2E /* ExtensionsHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsHomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +66,12 @@
 		7E77D9B9293A60C700E9C394 /* thirdAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				7EA8106F293BC8F90044BC2E /* HomeView */,
 				7E77D9BA293A60C700E9C394 /* AppDelegate.swift */,
 				7E77D9BC293A60C700E9C394 /* SceneDelegate.swift */,
 				7E77D9C0293A60C700E9C394 /* Main.storyboard */,
 				7E77D9D6293A723300E9C394 /* TaskInfoViewController.swift */,
-				7E77D9D4293A6D2100E9C394 /* TaskTableViewCell.swift */,
 				7E77D9D0293A631A00E9C394 /* AddTaskTableViewController.swift */,
-				7E77D9CE293A62AF00E9C394 /* HomeTableViewController.swift */,
 				7E77D9D9293AE63600E9C394 /* Extensions */,
 				7E77D9D8293ABFA800E9C394 /* Models */,
 				7E77D9C3293A60CA00E9C394 /* Assets.xcassets */,
@@ -91,8 +92,18 @@
 		7E77D9D9293AE63600E9C394 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7EA8106C293BC7DF0044BC2E /* ExtensionsHomeTableViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7EA8106F293BC8F90044BC2E /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				7E77D9CE293A62AF00E9C394 /* HomeTableViewController.swift */,
+				7E77D9D4293A6D2100E9C394 /* TaskTableViewCell.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			files = (
 				7E77D9D1293A631A00E9C394 /* AddTaskTableViewController.swift in Sources */,
 				7E77D9D7293A723300E9C394 /* TaskInfoViewController.swift in Sources */,
+				7EA8106D293BC7DF0044BC2E /* ExtensionsHomeTableViewController.swift in Sources */,
 				7E77D9CF293A62AF00E9C394 /* HomeTableViewController.swift in Sources */,
 				7E77D9D5293A6D2100E9C394 /* TaskTableViewCell.swift in Sources */,
 				7E77D9D3293A663300E9C394 /* TaskStruct.swift in Sources */,
