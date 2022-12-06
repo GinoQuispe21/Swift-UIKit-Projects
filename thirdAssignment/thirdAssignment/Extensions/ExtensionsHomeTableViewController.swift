@@ -19,9 +19,8 @@ extension HomeTableViewController {
         let nav = segue.destination as? UINavigationController
         let destination = nav?.viewControllers.first as? AddTaskTableViewController
         destination?.delegate = self
+        print("abriste agregar tarea modal")
     }
-    
-    
 }
 
 extension HomeTableViewController: AddTaskTableViewControllerDelegate{
@@ -33,6 +32,10 @@ extension HomeTableViewController: AddTaskTableViewControllerDelegate{
 }
 
 extension HomeTableViewController: TaskInfoViewControllerDelegate {
+    func taskInfoViewController(_ viewController: UIViewController, indexUpdated index: Int, didUpdateTask updateTask: Task) {
+        print("holi")
+    }
+    
     func taskInfoViewController(_ viewController: UIViewController, didRemoveTask index: Int) {
         taskArray.remove(at: index)
         taskTableView.reloadData()

@@ -9,10 +9,12 @@ import UIKit
 
 protocol TaskInfoViewControllerDelegate : AnyObject{
     func taskInfoViewController(_ viewController: UIViewController, didRemoveTask index: Int)
+    func taskInfoViewController(_ viewController: UIViewController, indexUpdated index: Int, didUpdateTask updateTask: Task)
 }
 
 class TaskInfoViewController: UIViewController {
     
+    var newTaskInfoViewController : Task?
     weak var delegate : TaskInfoViewControllerDelegate?
     
     @IBOutlet weak var nameTaskLabel: UILabel!
@@ -30,6 +32,9 @@ class TaskInfoViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func updateTaskButton(_ sender: UIButton) {
+    }
+    
     var indexCell: Int = 0
     var name: String?
     var desc: String?
@@ -44,4 +49,26 @@ class TaskInfoViewController: UIViewController {
         dateTaskLabel.text = date
     }
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as? UINavigationController
+        let destination = nav?.viewControllers.first as? EditTaskViewController
+        destination?.delegate = self
+        guard let na = name else {return}
+        guard let de = desc else {return}
+        guard let pr = prio else {return}
+        guard let da = date else {return}
+        destination?.task = Task(name: na, desc: de, priority: pr, date: da)
+        print("abriste agregar edit modal")
+    }
+}
+
+extension TaskInfoViewController: EditTaskViewControllerDelegate {
+    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task) {
+        newTaskInfoViewController = newTask
+        print("\(String(describing: newTaskInfoViewController?.name))")
+    }
 }

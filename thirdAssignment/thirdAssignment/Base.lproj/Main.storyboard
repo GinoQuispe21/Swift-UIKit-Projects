@@ -109,16 +109,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XT-wp-Rp1">
+                                <rect key="frame" x="30" y="753" width="333" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Actualizar"/>
+                                <connections>
+                                    <action selector="updateTaskButton:" destination="bur-Ot-RWh" eventType="touchUpInside" id="fKx-8p-3lh"/>
+                                    <segue destination="mKn-R9-GJV" kind="presentation" id="ZaR-OP-eK6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ewA-dz-otQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kdu-vw-MOV" firstAttribute="leading" secondItem="ewA-dz-otQ" secondAttribute="leading" constant="20" id="6LR-gp-gdn"/>
+                            <constraint firstItem="ewA-dz-otQ" firstAttribute="trailing" secondItem="7XT-wp-Rp1" secondAttribute="trailing" constant="30" id="83m-jm-zCy"/>
+                            <constraint firstItem="ewA-dz-otQ" firstAttribute="bottom" secondItem="7XT-wp-Rp1" secondAttribute="bottom" constant="30" id="CeP-sB-ZdD"/>
                             <constraint firstItem="UFT-W7-U5g" firstAttribute="top" secondItem="Kdu-vw-MOV" secondAttribute="bottom" constant="20" id="Hta-HI-2dw"/>
                             <constraint firstItem="ewA-dz-otQ" firstAttribute="trailing" secondItem="Kdu-vw-MOV" secondAttribute="trailing" constant="20" id="XQA-GQ-phS"/>
                             <constraint firstItem="ewA-dz-otQ" firstAttribute="trailing" secondItem="UFT-W7-U5g" secondAttribute="trailing" constant="20" id="cY6-rh-UVt"/>
                             <constraint firstItem="UFT-W7-U5g" firstAttribute="leading" secondItem="ewA-dz-otQ" secondAttribute="leading" constant="20" id="lzK-8E-0lv"/>
                             <constraint firstItem="Kdu-vw-MOV" firstAttribute="top" secondItem="ewA-dz-otQ" secondAttribute="top" constant="20" id="pMS-tf-uDd"/>
+                            <constraint firstItem="7XT-wp-Rp1" firstAttribute="leading" secondItem="ewA-dz-otQ" secondAttribute="leading" constant="30" id="zm6-3M-38T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mi Rutina" id="gWZ-gX-CKG">
@@ -143,6 +155,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzo-8U-9Fv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2944.2748091603053" y="84.507042253521135"/>
+        </scene>
+        <!--Editar Tarea-->
+        <scene sceneID="3g5-fQ-suv">
+            <objects>
+                <viewController id="4ql-Cq-QiD" customClass="EditTaskViewController" customModule="thirdAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WLk-x1-azv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqK-7B-Fcv">
+                                <rect key="frame" x="48" y="87" width="312" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-Qx-nvB">
+                                <rect key="frame" x="48" y="150" width="312" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZd-uM-VS1">
+                                <rect key="frame" x="230" y="310" width="130" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTB-wo-WaH">
+                                <rect key="frame" x="48" y="310" width="130" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vje-9y-iuQ"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Editar Tarea" id="zfd-T8-NDN">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="PSQ-Dr-Y0o">
+                            <connections>
+                                <action selector="closeEditBarButtonItem:" destination="4ql-Cq-QiD" id="WWA-kg-LRc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="65h-9n-1Pa">
+                            <connections>
+                                <action selector="saveTaskBarButtonItem:" destination="4ql-Cq-QiD" id="cJi-Cj-T19"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="nZd-uM-VS1" id="Afc-zP-4Jg"/>
+                        <outlet property="descTextView" destination="jJc-Qx-nvB" id="L5S-kj-EI1"/>
+                        <outlet property="nameTextField" destination="uqK-7B-Fcv" id="LJ1-vI-eYu"/>
+                        <outlet property="priorityTextField" destination="rTB-wo-WaH" id="GwI-mO-Dru"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kji-l9-pDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4652.6717557251905" y="84.507042253521135"/>
         </scene>
         <!--Agregar Tarea-->
         <scene sceneID="aYf-J4-WLT">
@@ -300,13 +373,37 @@
             </objects>
             <point key="canvasLocation" x="2017.5572519083969" y="84.507042253521135"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dgy-Hw-wOl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mKn-R9-GJV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bv7-zR-hby">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4ql-Cq-QiD" kind="relationship" relationship="rootViewController" id="Utc-dV-zUK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mX0-Qq-beO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3725.9541984732823" y="84.507042253521135"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
