@@ -9,7 +9,6 @@ import UIKit
 
 protocol TaskInfoViewControllerDelegate : AnyObject{
     func taskInfoViewController(_ viewController: UIViewController, didRemoveTask index: Int)
-    func taskInfoViewController(_ viewController: UIViewController, indexUpdated index: Int, didUpdateTask updateTask: Task)
 }
 
 class TaskInfoViewController: UIViewController {
@@ -33,6 +32,9 @@ class TaskInfoViewController: UIViewController {
     }
     
     @IBAction func updateTaskButton(_ sender: UIButton) {
+//        guard let taskAux = newTaskInfoViewController else {return}
+//        delegate?.taskInfoViewController(self, indexUpdated: indexCell, didUpdateTask: taskAux)
+//        print("final")
     }
     
     var indexCell: Int = 0
@@ -56,19 +58,26 @@ class TaskInfoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nav = segue.destination as? UINavigationController
         let destination = nav?.viewControllers.first as? EditTaskViewController
-        destination?.delegate = self
+//        destination?.delegate = self
         guard let na = name else {return}
         guard let de = desc else {return}
         guard let pr = prio else {return}
         guard let da = date else {return}
         destination?.task = Task(name: na, desc: de, priority: pr, date: da)
+        destination?.index = indexCell
         print("abriste agregar edit modal")
     }
 }
 
-extension TaskInfoViewController: EditTaskViewControllerDelegate {
-    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task) {
-        newTaskInfoViewController = newTask
-        print("\(String(describing: newTaskInfoViewController?.name))")
-    }
-}
+//extension TaskInfoViewController: EditTaskViewControllerDelegate {
+//    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task, indexCell index: Int) {
+//        <#code#>
+//    }
+//
+//    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task) {
+//        newTaskInfoViewController = newTask
+//        guard let aux = newTaskInfoViewController else {return}
+//        delegate?.taskInfoViewController(self, indexUpdated: indexCell, didUpdateTask: aux)
+//        dismiss(animated: true)
+//    }
+//}

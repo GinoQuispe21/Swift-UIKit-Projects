@@ -8,12 +8,13 @@
 import UIKit
 
 protocol EditTaskViewControllerDelegate {
-    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task)
+    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task, indexCell index: Int)
 }
 
 class EditTaskViewController: UIViewController {
 
     var task : Task?
+    var index : Int = 0
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descTextView: UITextView!
@@ -36,8 +37,7 @@ class EditTaskViewController: UIViewController {
         guard let da = date, !da.isEmpty else {return}
         
         let newTaskUpdate = Task(name: na, desc: de, priority: pr, date: da)
-        delegate?.editTaskViewController(self, didUpdated: newTaskUpdate)
-        
+        delegate?.editTaskViewController(self, didUpdated: newTaskUpdate, indexCell: index)
         dismiss(animated: true)
     }
     
@@ -48,6 +48,7 @@ class EditTaskViewController: UIViewController {
         descTextView.text = task?.desc
         priorityTextField.text = task?.priority
         dateTextField.text = task?.date
+        print("El index Cell  para eliminar es: \(index)")
         super.viewDidLoad()
     }
 }

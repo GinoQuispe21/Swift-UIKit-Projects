@@ -32,12 +32,16 @@ extension HomeTableViewController: AddTaskTableViewControllerDelegate{
 }
 
 extension HomeTableViewController: TaskInfoViewControllerDelegate {
-    func taskInfoViewController(_ viewController: UIViewController, indexUpdated index: Int, didUpdateTask updateTask: Task) {
-        print("holi")
-    }
-    
     func taskInfoViewController(_ viewController: UIViewController, didRemoveTask index: Int) {
         taskArray.remove(at: index)
         taskTableView.reloadData()
     }
 }
+
+extension HomeTableViewController: EditTaskViewControllerDelegate {
+    func editTaskViewController(_ viewController: UIViewController, didUpdated newTask: Task, indexCell index: Int) {
+        taskArray[index] = newTask
+        taskTableView.reloadData()
+    }
+}
+

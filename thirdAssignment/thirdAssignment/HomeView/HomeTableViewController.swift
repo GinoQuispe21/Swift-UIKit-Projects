@@ -41,6 +41,7 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = taskArray[indexPath.row]
         guard let taskInfoViewController = storyboard?.instantiateViewController(withIdentifier: "taskInfoViewController") as? TaskInfoViewController else { return }
+        guard let editTaskInfoViewController = storyboard?.instantiateViewController(withIdentifier: "editTaskViewController") as? EditTaskViewController else { return }
         taskInfoViewController.name = task.name
         taskInfoViewController.desc = task.desc
         taskInfoViewController.prio = task.priority
@@ -48,9 +49,18 @@ class HomeTableViewController: UITableViewController {
         
         let nav = UINavigationController(rootViewController: taskInfoViewController)
         let destination = nav.viewControllers.first as? TaskInfoViewController
+        
+        let nav2 = UINavigationController(rootViewController: editTaskInfoViewController)
+        let destination2 = nav2.viewControllers.first as? EditTaskViewController
+        
+        print(destination2)
+        
         destination?.indexCell = indexPath.row
         destination?.delegate = self
+        
+        destination2?.delegate = self
+        destination2?.index = indexPath.row
+        
         present(nav, animated: true)
     }
 }
-

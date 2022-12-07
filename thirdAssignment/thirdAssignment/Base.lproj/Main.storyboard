@@ -159,7 +159,7 @@
         <!--Editar Tarea-->
         <scene sceneID="3g5-fQ-suv">
             <objects>
-                <viewController id="4ql-Cq-QiD" customClass="EditTaskViewController" customModule="thirdAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editTaskViewController" id="4ql-Cq-QiD" customClass="EditTaskViewController" customModule="thirdAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WLk-x1-azv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
