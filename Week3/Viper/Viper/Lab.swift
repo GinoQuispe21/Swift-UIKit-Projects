@@ -10,10 +10,11 @@ import Foundation
 func test(){
     
     let presenter = ListaPresenter()
-    let formularioPresenter = FormularioPresenter()
+//    let formularioPresenter = FormularioPresenter()
     
     
     let viewController = ListaViewController()
-    viewController.presenter = formularioPresenter
+//    viewController.presenter = formularioPresenter
+    viewController.presenter = presenter
     
 }

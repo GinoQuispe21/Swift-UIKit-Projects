@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Moly",
+        "tipo": "Cat",
+        "birthday": "45645646"
+    },
+    {
+        "name": "Peluchin",
+        "tipo": "Dog",
+        "birthday": "45645646"
+    },
+    {
+        "name": "Neron",
+        "tipo": "Dog",
+        "birthday": "45645646"
+    },
+    {
+        "name": "Gaston",
+        "tipo": "Dog",
+        "birthday": "45645646"
+    },
+    {
+        "name": "Don't remember his name",
+        "tipo": "Cat",
+        "birthday": "45645646"
+    },
+    {
+        "name": "Nena",
+        "tipo": "Dog",
+        "birthday": "45645646"
+    }
+]

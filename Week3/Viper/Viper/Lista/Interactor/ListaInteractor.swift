@@ -8,15 +8,31 @@
 import Foundation
 
 protocol ListaInteractorProtocol {
-    func dataFromRequest()
+    func favoritos()
 }
 
 class ListaInteractor {
+    
+//    private let api: CustomApi = CustomApi()
     var presenter: ListaPresenterProtocol?
+    var api: RemoteRepository?
+    
+    required init(presenter: ListaPresenterProtocol, api: RemoteRepository) {
+        self.presenter = presenter
+        self.api = api
+    }
 }
 
 extension ListaInteractor : ListaInteractorProtocol {
-    func dataFromRequest() {
-        presenter?.arrayOrder()
+    func favoritos() {
+        print("Favoritos del interactor")
+        print("PetResponse is sended to Presenter")
+        if let favPets = api?.fetchTrendingPets(){
+            
+            let petModel = PetEntity.make(favPets)
+            
+            presenter?.presentFavPets(petModel)
+            print("Pets in interactor : \(petModel)")
+        }
     }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0C60A22946364200A7A529 /* pets_success_01.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C60A12946364200A7A529 /* pets_success_01.json */; };
+		7E0C60A4294636E200A7A529 /* PetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C60A3294636E200A7A529 /* PetResponse.swift */; };
+		7E0C60A629463A0B00A7A529 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C60A529463A0A00A7A529 /* Networking.swift */; };
+		7E75823E294598A200FFC0DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75823D294598A200FFC0DB /* ViewController.swift */; };
+		7E75824029459BCE00FFC0DB /* ListaConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75823F29459BCE00FFC0DB /* ListaConfigurator.swift */; };
 		7EA3C0BA294544EE009F553E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3C0B9294544EE009F553E /* AppDelegate.swift */; };
 		7EA3C0BC294544EE009F553E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3C0BB294544EE009F553E /* SceneDelegate.swift */; };
 		7EA3C0C1294544EE009F553E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3C0BF294544EE009F553E /* Main.storyboard */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0C60A12946364200A7A529 /* pets_success_01.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pets_success_01.json; sourceTree = "<group>"; };
+		7E0C60A3294636E200A7A529 /* PetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetResponse.swift; sourceTree = "<group>"; };
+		7E0C60A529463A0A00A7A529 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7E75823D294598A200FFC0DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E75823F29459BCE00FFC0DB /* ListaConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaConfigurator.swift; sourceTree = "<group>"; };
 		7EA3C0B6294544EE009F553E /* Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA3C0B9294544EE009F553E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EA3C0BB294544EE009F553E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +57,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0C609F2946361C00A7A529 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C60A529463A0A00A7A529 /* Networking.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		7E0C60A02946362900A7A529 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C60A12946364200A7A529 /* pets_success_01.json */,
+				7E0C60A3294636E200A7A529 /* PetResponse.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7EA3C0AD294544EE009F553E = {
 			isa = PBXGroup;
 			children = (
@@ -66,10 +93,13 @@
 		7EA3C0B8294544EE009F553E /* Viper */ = {
 			isa = PBXGroup;
 			children = (
+				7E0C60A02946362900A7A529 /* Resources */,
+				7E0C609F2946361C00A7A529 /* Extras */,
 				7EA3C0CD294544FA009F553E /* Lista */,
 				7EA3C0B9294544EE009F553E /* AppDelegate.swift */,
 				7EA3C0BB294544EE009F553E /* SceneDelegate.swift */,
 				7EA3C0BF294544EE009F553E /* Main.storyboard */,
+				7E75823D294598A200FFC0DB /* ViewController.swift */,
 				7EA3C0C2294544F1009F553E /* Assets.xcassets */,
 				7EA3C0C4294544F1009F553E /* LaunchScreen.storyboard */,
 				7EA3C0C7294544F1009F553E /* Info.plist */,
@@ -134,6 +164,7 @@
 		7EA3C0D32945453C009F553E /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				7E75823F29459BCE00FFC0DB /* ListaConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -196,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0C60A22946364200A7A529 /* pets_success_01.json in Resources */,
 				7EA3C0C6294544F1009F553E /* LaunchScreen.storyboard in Resources */,
 				7EA3C0C3294544F1009F553E /* Assets.xcassets in Resources */,
 				7EA3C0C1294544EE009F553E /* Main.storyboard in Resources */,
@@ -209,9 +241,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E75824029459BCE00FFC0DB /* ListaConfigurator.swift in Sources */,
 				7EA3C0D5294545E2009F553E /* ListaViewController.swift in Sources */,
+				7E0C60A4294636E200A7A529 /* PetResponse.swift in Sources */,
+				7E0C60A629463A0B00A7A529 /* Networking.swift in Sources */,
 				7EA3C0D82945460E009F553E /* ListaInteractor.swift in Sources */,
 				7EA3C0DE29454631009F553E /* ListaEntity.swift in Sources */,
+				7E75823E294598A200FFC0DB /* ViewController.swift in Sources */,
 				7EA3C0E029454B03009F553E /* Lab.swift in Sources */,
 				7EA3C0DA29454619009F553E /* ListaPresenter.swift in Sources */,
 				7EA3C0BA294544EE009F553E /* AppDelegate.swift in Sources */,

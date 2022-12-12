@@ -12,3 +12,10 @@
 // este entity se jala del interactor y se lleva al presenter
 
 import Foundation
+
+struct PetEntity {
+    let name: String
+    static func make(_ pets: [PetResponse]) -> [PetEntity] {
+        return pets.map ( { PetEntity(name: $0.name) } )
+    }
+}
