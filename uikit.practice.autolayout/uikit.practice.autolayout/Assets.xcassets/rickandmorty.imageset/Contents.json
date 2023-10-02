@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "img_pay-qr-code-apple-pay.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
